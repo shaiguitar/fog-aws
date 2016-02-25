@@ -37,6 +37,8 @@ module Fog
 
       class Mock
         def attach_instances(auto_scaling_group_name, options = {})
+
+          binding.pry
           unexpected_options = options.keys - ExpectedOptions[:asg_name] - ExpectedOptions[:instance_ids]
 
           unless unexpected_options.empty?
